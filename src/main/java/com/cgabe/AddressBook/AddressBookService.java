@@ -1,16 +1,19 @@
 package com.cgabe.AddressBook;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import java.util.Optional;
 
 @Service
 public class AddressBookService implements AddressBookRepository {
 
+    @Qualifier("addressBookRepository")
     @Autowired
     private AddressBookRepository repo;
 
@@ -82,5 +85,9 @@ public class AddressBookService implements AddressBookRepository {
     @Override
     public void deleteAll() {
 
+    }
+
+    public String addBuddies(){
+        return "buddies";
     }
 }

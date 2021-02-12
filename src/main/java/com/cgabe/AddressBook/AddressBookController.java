@@ -14,9 +14,11 @@ import java.util.concurrent.atomic.AtomicLong;
 @Controller
 public class AddressBookController{
 
+    private final AddressBookService service;
 
-    @Autowired
-    private AddressBookService service;
+    public AddressBookController(AddressBookService service){
+        this.service = service;
+    }
 
     @PostMapping(path="/add")
     public String addBuddy(@RequestParam(name="name") String name, @RequestParam(name="phoneNumber") String phone){
@@ -35,13 +37,12 @@ public class AddressBookController{
     }
 
     @GetMapping(path = "/add")
-    public String getBuddies(Model model){
+    public @ResponseBody String getBuddies(Model model){
         AddressBook book = service.findById(1L);
         if(book != null)
             model.addAttribute("addressbook",book.toString());
         else
             model.addAttribute("addressbook","no friends here :(");
-
         return "buddies";
 
     }
