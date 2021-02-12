@@ -9,4 +9,4 @@ deploy:
   app: addressbook-gciolac
   on:
       branch: main
-    dist: trusty
+  dist: trusty
