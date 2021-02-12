@@ -3,3 +3,7 @@ install: true
 jdk:
   - openjdk13
 script: mvn install
+deploy:
+  provider: heroku
+  api-key: $HEROKU_API_KEY
+  app: lippep-spring-boot-test
