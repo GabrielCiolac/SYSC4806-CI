@@ -1,4 +1,5 @@
 language: java
+install: true
 jdk:
   - openjdk13
-script: mvn clean verify
+script: mvn install
