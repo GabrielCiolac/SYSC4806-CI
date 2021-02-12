@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="view" class="com.cgabe.AddressBook.View" init-method="init">
+        <property name="contentPane" ref="mainPanel"/>
+        <property name="title" value="AddressBook"/>
+    </bean>
+    <bean id="mainPanel" class="com.cgabe.AddressBook.BoxLayoutPanel" init-method="init">
+        <property name="axis" value="1"/>
+        <property name="panelComponents">
+            <list>
+                <ref bean="itemTable"/>
+                <ref bean="buttonPanel"/>
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="itemTable" class="com.cgabe.AddressBook.AddressBookList" init-method="init">
+        <property name="book" ref="book"/>
+    </bean>
+
+    <bean id="book" class="com.cgabe.AddressBook.AddressBook"/>
+
+    <bean id="addButton" class="com.cgabe.AddressBook.ActionListenerButton" init-method="init">
+        <property name="actionListener" ref="addNewButtonActionListener"/>
+        <property name="text" value="Add"/>
+    </bean>
+    <bean id="deleteButton" class="com.cgabe.AddressBook.ActionListenerButton" init-method="init">
+        <property name="actionListener" ref="deleteNewButtonActionListener"/>
+        <property name="text" value="Delete"/>
+    </bean>
+    <bean id="buttonPanel" class="com.cgabe.AddressBook.BoxLayoutPanel" init-method="init">
+        <property name="axis" value="0"/>
+        <property name="panelComponents">
+            <list>
+                <ref bean="addButton"/>
+                <ref bean="deleteButton"/>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="addNewButtonActionListener"
+          class="com.cgabe.AddressBook.AddNewButtonActionListener">
+        <property name="book" ref="book"/>
+    </bean>
+
+    <bean id="deleteNewButtonActionListener"
+          class="com.cgabe.AddressBook.DeleteButtonActionListener">
+        <property name="book" ref="book"/>
+    </bean>
+
+
+</beans>
