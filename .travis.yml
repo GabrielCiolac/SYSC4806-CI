@@ -8,5 +8,5 @@ deploy:
   api-key: $HEROKU_API_KEY
   app: addressbook-gciolac
   on:
-      branch: main
+    all_branches: true
 dist: trusty
