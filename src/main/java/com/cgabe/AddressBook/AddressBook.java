@@ -3,10 +3,8 @@ package com.cgabe.AddressBook;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.persistence.*;
-import javax.swing.*;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 @Entity
