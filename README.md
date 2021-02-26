@@ -11,3 +11,4 @@ On the main branch you need to go to /addBuddy?name=name&phoneNumber=0 before /i
 
 ## URL
 [Heroku Hosted Service](https://addressbook-gciolac.herokuapp.com/index)
+[GitHub REPO](https://github.com/GabrielCiolac/SYSC4806-CI)
