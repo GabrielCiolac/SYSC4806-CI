@@ -2,7 +2,6 @@ package com.cgabe.AddressBook;
 
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.annotation.processing.Generated;
 import javax.persistence.*;
 import javax.swing.*;
 import java.io.Serializable;

@@ -20,7 +20,7 @@ public class AddressBookController{
         this.service = service;
     }
 
-    @PostMapping(path="/add")
+    @GetMapping(path="/submit")
     public String addBuddy(@RequestParam(name="name") String name, @RequestParam(name="phoneNumber") String phone){
         AddressBook book = service.findById(1L);
 
@@ -37,7 +37,7 @@ public class AddressBookController{
     }
 
     @GetMapping(path = "/add")
-    public @ResponseBody String getBuddies(Model model){
+    public String getBuddies(Model model){
         AddressBook book = service.findById(1L);
         if(book != null)
             model.addAttribute("addressbook",book.toString());
